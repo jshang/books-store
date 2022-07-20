@@ -1,7 +1,7 @@
 import os
 from flask import Flask, request, jsonify, render_template
 from flask_sqlalchemy import SQLAlchemy
-
+from search_util import search
 
 app = Flask(__name__)
 
@@ -76,7 +76,8 @@ def search():
     if request.method == 'POST':
         name=request.form.get('name')
         category=request.form.get('category')
-       
+        search(name, category)
+	print("finish serach")
     return "search done"
 
 if __name__ == '__main__':
