@@ -67,5 +67,17 @@ def add_book_form():
             return(str(e))
     return render_template("getdata.html")
 
+@app.route("/search")
+def searchhome():      
+    return render_template("search.html")
+
+@app.route("/search",methods=['GET', 'POST'])
+def search():
+    if request.method == 'POST':
+        name=request.form.get('name')
+        category=request.form.get('category')
+       
+    return "search done"
+
 if __name__ == '__main__':
     app.run()
