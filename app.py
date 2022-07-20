@@ -72,7 +72,7 @@ def searchhome():
     return render_template("search.html")
 
 @app.route("/search",methods=['GET', 'POST'])
-def search():
+def mysearch():
     if request.method == 'POST':
         name=request.form.get('name')
         category=request.form.get('category')
